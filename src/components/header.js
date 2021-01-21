@@ -13,7 +13,7 @@ const HomeLink = styled(Link)`
 
 const Header = () => (
   <header style={{
-    backgroundColor: "#333",
+    backgroundColor: "#222",
     padding: ".5rem"
   }}>
     <div css={css`

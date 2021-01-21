@@ -2,11 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import styled from "@emotion/styled"
-import Img from "gatsby-image"
-
-const ImageBackground = styled(BackgroundImage)`
-  height: 700px;
-`
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -18,6 +13,34 @@ const ImageBackground = styled(BackgroundImage)`
  * - `gatsby-image`: https://gatsby.dev/gatsby-image
  * - `useStaticQuery`: https://www.gatsbyjs.com/docs/use-static-query/
  */
+
+const ImageBackground = styled(BackgroundImage)`
+  height: 700px;
+`
+
+const Text = styled.div`
+    background-image: linear-gradient( to top, rgba(34,49,63,.4),rgba(34,49,63,.4));
+    color: #FFF;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    h1 {
+        font-size: 4rem;
+        margin: 0%;
+        @media (min-width: 992px){
+            font-size: 5.8rem;
+        }
+    }
+    p {
+        font-size: 2rem;
+        @media (min-width: 992px){
+            font-size: 2.6rem;
+        }
+    }
+`
 
 const HotelImage = () => {
   const { image } = useStaticQuery(graphql`
@@ -36,7 +59,12 @@ const HotelImage = () => {
     return <div>Picture not found</div>
   }
 
-  return <ImageBackground tag='section' fluid={image.sharp.fluid} fadeIn='soft'/>
+  return <ImageBackground tag='section' fluid={image.sharp.fluid} fadeIn='soft'>
+    <Text>
+      <h1>Welcome to Gatsby Hotel</h1>
+      <p>The Best Hotel for your vacations</p>
+    </Text>
+  </ImageBackground>
 }
 
 export default HotelImage
