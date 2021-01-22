@@ -7,26 +7,19 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import { Helmet } from "react-helmet"
+import Footer from "./footer"
+import useSeo from "../hooks/useSeo"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-      query SiteTitleQuery {
-          site {
-              siteMetadata {
-                  title
-              }
-          }
-      }
-  `)
-
+  const seo = useSeo()
+  const { fallbackSeo: { description, title } } = seo
   return (
     <>
       <Helmet>
-        <title>Gatsby Hotel</title>
+        <title>{title}</title>
+        <meta name='description' content={description}/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
               integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
               crossOrigin="anonymous"/>
@@ -35,18 +28,10 @@ const Layout = ({ children }) => {
           href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap"
           rel="stylesheet"/>
       </Helmet>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`}/>
+      <Header title={title}/>
       <div>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        <Footer title={title}/>
       </div>
     </>
   )
