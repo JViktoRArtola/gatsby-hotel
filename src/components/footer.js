@@ -45,7 +45,7 @@ const Footer = ({ title }) => {
             padding: 1rem;
         `}
       >
-        {title}. All rights reserved {year} &copy;  Built with <a href="https://www.gatsbyjs.com">Gatsby</a>
+        {title}. All rights reserved {year} &copy;  Built with <Link to="https://www.gatsbyjs.com">Gatsby</Link>
       </p>
     </>
   )

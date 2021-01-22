@@ -4,19 +4,7 @@ import HotelImage from "../components/image"
 import ContentHome from "../components/contentHome"
 import useBedRooms from "../hooks/useBedRooms"
 import RoomPreview from "../components/roomPreview"
-import styled from "@emotion/styled"
-
-
-const RoomList = styled.ul`
-  max-width: 1200px;
-  width: 95%;
-  margin: 4rem auto 0 auto;
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 3rem
-  }
-`
+import { css } from "@emotion/react"
 
 const IndexPage = () => {
   const rooms = useBedRooms()
@@ -25,14 +13,23 @@ const IndexPage = () => {
       <HotelImage/>
       <ContentHome/>
 
-      <RoomList>
+      <ul css={css`
+          max-width: 1200px;
+          width: 95%;
+          margin: 4rem auto 0 auto;
+          @media (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 3rem
+            }
+      `}>
         {rooms.map(room => (
           <RoomPreview
             key={room.id}
             room={room}
           />
         ))}
-      </RoomList>
+      </ul>
     </Layout>
   )
 }

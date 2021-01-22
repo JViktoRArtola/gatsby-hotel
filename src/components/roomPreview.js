@@ -22,7 +22,7 @@ const RoomPreview = ({ room }) => {
   const { content, image, title, slug } = room
 
   return (
-    <div
+    <li
       css={css`
               border: 1px solid #e1e1e1;
               margin-bottom: 2rem;
@@ -42,7 +42,7 @@ const RoomPreview = ({ room }) => {
         <p>{content}</p>
         <Button to={slug}>See Room</Button>
       </div>
-    </div>
+    </li>
   )
 }
 
