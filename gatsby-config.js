@@ -40,6 +40,23 @@ module.exports = {
         precachePages: [`/about-us/`,`/room1/`,`/room2/`,`/room3/`, `/rooms/*`],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: 'Roboto Slab',
+            variable: true,
+            weights: ['400..700']
+          },
+          {
+            family: 'PT Sans',
+            variable: true,
+            weights: ['400..700']
+          }
+        ]
+      }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
