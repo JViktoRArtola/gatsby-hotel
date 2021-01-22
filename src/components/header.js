@@ -11,7 +11,7 @@ const HomeLink = styled(Link)`
     text-decoration: none;
 `
 
-const Header = () => (
+const Header = ({title}) => (
   <header style={{
     backgroundColor: "#222",
     padding: ".5rem"
@@ -26,7 +26,7 @@ const Header = () => (
           }
     `}>
       <HomeLink to='/'>
-        <h1>Gatsby Hotel</h1>
+        <h1>{title}</h1>
       </HomeLink>
       <Navigation/>
     </div>
