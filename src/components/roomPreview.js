@@ -24,25 +24,22 @@ const RoomPreview = ({ room }) => {
   return (
     <div
       css={css`
-                border: 1px solid #e1e1e1;
-                margin-bottom: 2rem;
-            `}
+              border: 1px solid #e1e1e1;
+              margin-bottom: 2rem;
+      `}
     >
-      <Image
-        fluid={image.fluid}
-      />
+      <Image fluid={image.fluid}/>
       <div
         css={css`
-                    padding: 3rem;
-                `}
+              padding: 3rem;
+        `}
       >
         <h3
           css={css`
-                        font-size: 3rem;
-                    `}
+                font-size: 3rem;
+          `}
         >{title}</h3>
         <p>{content}</p>
-
         <Button to={slug}>See Room</Button>
       </div>
     </div>
