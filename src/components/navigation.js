@@ -36,7 +36,7 @@ const Navigation = () => {
         activeClassName="actualPage"
       >Home</NavLink>
       <NavLink
-        to={'/page-2'}
+        to={'/about-us'}
         activeClassName="actualPage"
       >About Us</NavLink>
     </Nav>
