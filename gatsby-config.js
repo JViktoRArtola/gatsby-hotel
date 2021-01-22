@@ -34,6 +34,12 @@ module.exports = {
         apiToken: '2b5c36caec3e03a36609afd57f741c'
       }
     },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/about-us/`,`/room1/`,`/room2/`,`/room3/`, `/rooms/*`],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
